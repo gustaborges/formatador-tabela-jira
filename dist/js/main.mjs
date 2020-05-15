@@ -13,10 +13,3 @@ window.onload = () => {
 function enableBootstrapToolTips() {
     $('[data-toggle="tooltip"]').tooltip({ delay: { show: 800 }});
 }
-
-
-
-function resultTypeIsImage(resultType) {
-    return resultType !== 'normal-text';
-}
-

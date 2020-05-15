@@ -1,6 +1,6 @@
-import CodeEditor from "./CodeEditor.js";
-import { HtmlHelper, MarkdownHelper } from "./CodeHelpers.js";
-import { tableDataSet, TestResultColumnsEnum, TestStatusEnum, getStatusFromSymbol, found } from "../common/common.js";
+import CodeEditor from "./CodeEditor.mjs";
+import { HtmlHelper, MarkdownHelper } from "./CodeHelpers.mjs";
+import { tableDataSet, TestResultColumnsEnum, TestStatusEnum, getStatusFromSymbol, found } from "../common/common.mjs";
 
 let c, s;
 

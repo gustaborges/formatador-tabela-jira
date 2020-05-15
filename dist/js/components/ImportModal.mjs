@@ -1,7 +1,7 @@
-import { HtmlHelper, MarkdownHelper } from "./CodeHelpers.js";
-import DataNavigator from "./DataNavigator.js";
-import CodeEditor from "./CodeEditor.js";
-import {tableDataSet} from "../common/common.js";
+import { HtmlHelper, MarkdownHelper } from "./CodeHelpers.mjs";
+import DataNavigator from "./DataNavigator.mjs";
+import CodeEditor from "./CodeEditor.mjs";
+import {tableDataSet} from "../common/common.mjs";
 
 let c;
 

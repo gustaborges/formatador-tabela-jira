@@ -1,7 +1,7 @@
-import ImportModal from "./ImportModal.js";
-import { MarkdownHelper } from "./CodeHelpers.js";
+import ImportModal from "./ImportModal.mjs";
+import { MarkdownHelper } from "./CodeHelpers.mjs";
 
-import { TestResultColumnsEnum, tableDataSet } from "../common/common.js";
+import { TestResultColumnsEnum, tableDataSet } from "../common/common.mjs";
 
 let c;
 
