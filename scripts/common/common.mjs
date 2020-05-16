@@ -16,6 +16,7 @@ const TestResultColumnsEnum = Object.freeze({
 const TestStatusEnum = Object.freeze({
     "FAILED": 'failed',
     "SUCCESS": 'success',
+    "ALERT": 'alert',
     "PENDING": 'pending'
 });
 
@@ -27,6 +28,7 @@ function getStatusFromSymbol(symbol) {
   switch(symbol) {
     case "(/)": return TestStatusEnum.SUCCESS;
     case "(x)": return TestStatusEnum.FAILED;
+    case "(!)" : return TestStatusEnum.ALERT;
     case "(?)": return TestStatusEnum.PENDING;
     default: return TestStatusEnum.PENDING;
   }

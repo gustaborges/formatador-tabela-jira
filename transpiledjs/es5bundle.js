@@ -148,7 +148,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
   }();
 
   var o = Object.freeze({ STATUS: "Status", EVIDENCE: "Evidência" }),
-      r = Object.freeze({ FAILED: "failed", SUCCESS: "success", PENDING: "pending" });var i = new s();
+      r = Object.freeze({ FAILED: "failed", SUCCESS: "success", ALERT: "alert", PENDING: "pending" });var i = new s();
   var a = function () {
     function a() {
       _classCallCheck(this, a);
@@ -252,7 +252,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       value: function getStatusSymbol(t) {
         switch (t) {case r.SUCCESS:
             return "(/)";case r.FAILED:
-            return "(x)";case r.PENDING:default:
+            return "(x)";case r.ALERT:
+            return "(!)";case r.PENDING:default:
             return "(?)";}
       }
     }]);
@@ -312,7 +313,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       var t = i.fetchTestResult({ resultColumnIdentifier: o.STATUS, itemIndex: c.currentItem - 1 });return t ? function (t) {
         switch (t) {case "(/)":
             return r.SUCCESS;case "(x)":
-            return r.FAILED;case "(?)":default:
+            return r.FAILED;case "(!)":
+            return r.ALERT;case "(?)":default:
             return r.PENDING;}
       }(t) : r.PENDING;
     }();

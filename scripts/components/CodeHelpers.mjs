@@ -182,6 +182,7 @@ export class MarkdownHelper {
         switch(testStatus) {
             case TestStatusEnum.SUCCESS: return "(/)";
             case TestStatusEnum.FAILED: return "(x)";
+            case TestStatusEnum.ALERT: return "(!)";
             case TestStatusEnum.PENDING: return "(?)";
             default: return "(?)";
         }
