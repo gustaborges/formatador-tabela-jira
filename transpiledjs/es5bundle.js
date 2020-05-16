@@ -9,18 +9,18 @@ function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 !function (t) {
-  var e = {};function n(s) {
-    if (e[s]) return e[s].exports;var o = e[s] = { i: s, l: !1, exports: {} };return t[s].call(o.exports, o, o.exports, n), o.l = !0, o.exports;
-  }n.m = t, n.c = e, n.d = function (t, e, s) {
-    n.o(t, e) || Object.defineProperty(t, e, { enumerable: !0, get: s });
+  var e = {};function n(o) {
+    if (e[o]) return e[o].exports;var s = e[o] = { i: o, l: !1, exports: {} };return t[o].call(s.exports, s, s.exports, n), s.l = !0, s.exports;
+  }n.m = t, n.c = e, n.d = function (t, e, o) {
+    n.o(t, e) || Object.defineProperty(t, e, { enumerable: !0, get: o });
   }, n.r = function (t) {
     "undefined" != typeof Symbol && Symbol.toStringTag && Object.defineProperty(t, Symbol.toStringTag, { value: "Module" }), Object.defineProperty(t, "__esModule", { value: !0 });
   }, n.t = function (t, e) {
-    if (1 & e && (t = n(t)), 8 & e) return t;if (4 & e && "object" == (typeof t === "undefined" ? "undefined" : _typeof(t)) && t && t.__esModule) return t;var s = Object.create(null);if (n.r(s), Object.defineProperty(s, "default", { enumerable: !0, value: t }), 2 & e && "string" != typeof t) for (var o in t) {
-      n.d(s, o, function (e) {
+    if (1 & e && (t = n(t)), 8 & e) return t;if (4 & e && "object" == (typeof t === "undefined" ? "undefined" : _typeof(t)) && t && t.__esModule) return t;var o = Object.create(null);if (n.r(o), Object.defineProperty(o, "default", { enumerable: !0, value: t }), 2 & e && "string" != typeof t) for (var s in t) {
+      n.d(o, s, function (e) {
         return t[e];
-      }.bind(null, o));
-    }return s;
+      }.bind(null, s));
+    }return o;
   }, n.n = function (t) {
     var e = t && t.__esModule ? function () {
       return t.default;
@@ -33,17 +33,17 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 }([function (t, e, n) {
   "use strict";
   n.r(e);
-  var s = function () {
-    function s() {
+  var o = function () {
+    function o() {
       var t = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : [""];
       var e = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : [[""]];
 
-      _classCallCheck(this, s);
+      _classCallCheck(this, o);
 
       this._header, this._rows, this._testResultHeader = [], this._testResultRows = [], this.settings = { markedColumns: void 0 }, this.setHeaderCollection(t), this.setRowsCollection(e);
     }
 
-    _createClass(s, [{
+    _createClass(o, [{
       key: "setHeaderCollection",
       value: function setHeaderCollection(t) {
         this._header = t;
@@ -84,7 +84,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         if (!this.settings.markedColumns || !this._header || !this._rows) return;if (this.settings.markedColumns.reduce(function (t, e) {
           return e > t ? e : t;
         }, 0) > this._header.length) return;var t = this._getHeaderExportVersion(),
-            e = this._getRowsExportVersion();return new s(t, e);
+            e = this._getRowsExportVersion();return new o(t, e);
       }
     }, {
       key: "clear",
@@ -111,7 +111,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         var t = _ref.resultColumnIdentifier,
             e = _ref.result,
             n = _ref.itemIndex;
-        if (void 0 === n) return;var s = this._getTestResultHeader().indexOf(t);this._testResultRows[n][s] = e;
+        if (void 0 === n) return;var o = this._getTestResultHeader().indexOf(t);this._testResultRows[n][o] = e;
       }
     }, {
       key: "fetchTestResult",
@@ -126,7 +126,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         var t = [];var e = this.getHeaderCollection(),
             n = this.settings.markedColumns;if (!e || !n) return;n.forEach(function (n) {
           t.push(e[n]);
-        });var s = this._getTestResultHeader();return t = [].concat(_toConsumableArray(t), _toConsumableArray(s)), t;
+        });var o = this._getTestResultHeader();return t = [].concat(_toConsumableArray(t), _toConsumableArray(o)), t;
       }
     }, {
       key: "_getRowsExportVersion",
@@ -135,26 +135,26 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
         var t = this.getRowsCollection(),
             e = this.settings.markedColumns;if (!t || !e) return;var n = void 0,
-            s = [],
-            o = 0;return t.forEach(function (t) {
+            o = [],
+            s = 0;return t.forEach(function (t) {
           n = [], e.forEach(function (e) {
             n.push(t[e]);
-          });var r = _this._getTestResultRows();n = [].concat(_toConsumableArray(n), _toConsumableArray(r[o++])), s.push(n);
-        }), s;
+          });var r = _this._getTestResultRows();n = [].concat(_toConsumableArray(n), _toConsumableArray(r[s++])), o.push(n);
+        }), o;
       }
     }]);
 
-    return s;
+    return o;
   }();
 
-  var o = Object.freeze({ STATUS: "Status", EVIDENCE: "Evidência" }),
-      r = Object.freeze({ FAILED: "failed", SUCCESS: "success", ALERT: "alert", PENDING: "pending" });var i = new s();
-  var a = function () {
-    function a() {
-      _classCallCheck(this, a);
+  var s = Object.freeze({ STATUS: "Status", EVIDENCE: "Evidência" }),
+      r = Object.freeze({ FAILED: "failed", SUCCESS: "success", ALERT: "alert", PENDING: "pending" });var a = new o();
+  var i = function () {
+    function i() {
+      _classCallCheck(this, i);
     }
 
-    _createClass(a, null, [{
+    _createClass(i, null, [{
       key: "newTableHeader",
       value: function newTableHeader(t) {
         var _ref3 = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {},
@@ -166,12 +166,12 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         var _ref3$badgeConfig$col = _ref3$badgeConfig.columns,
             n = _ref3$badgeConfig$col === undefined ? [] : _ref3$badgeConfig$col,
             _ref3$badgeConfig$tex = _ref3$badgeConfig.text,
-            s = _ref3$badgeConfig$tex === undefined ? "" : _ref3$badgeConfig$tex;
-        t || (t = ["Empty"]);var o = "",
+            o = _ref3$badgeConfig$tex === undefined ? "" : _ref3$badgeConfig$tex;
+        t || (t = ["Empty"]);var s = "",
             r = "",
-            i = 0;return e && (r = "<span class=\"badge badge-pill badge-pale\">" + s + "</span>"), t.forEach(function (t) {
-          n.includes(i++) ? o += "<th>" + t + " " + r + "</th>" : o += "<th>" + t + "</th>";
-        }), o;
+            a = 0;return e && (r = "<span class=\"badge badge-pill badge-pale\">" + o + "</span>"), t.forEach(function (t) {
+          n.includes(a++) ? s += "<th>" + t + " " + r + "</th>" : s += "<th>" + t + "</th>";
+        }), s;
       }
     }, {
       key: "newTableRow",
@@ -190,12 +190,12 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             _ref4$value = _ref4.value,
             n = _ref4$value === undefined ? "" : _ref4$value,
             _ref4$name = _ref4.name,
-            s = _ref4$name === undefined ? "" : _ref4$name;
-        var o = [];return o.push('<div class="custom-control custom-checkbox mb-2">'), o.push("<input type=\"checkbox\" class=\"custom-control-input\" id=\"" + e + "\" value=\"" + n + "\" name=\"" + s + "\">"), o.push("<label class=\"custom-control-label\" for=\"" + e + "\">" + t + "</label>"), o.push("</div>"), o.join("");
+            o = _ref4$name === undefined ? "" : _ref4$name;
+        var s = [];return s.push('<div class="custom-control custom-checkbox mb-2">'), s.push("<input type=\"checkbox\" class=\"custom-control-input\" id=\"" + e + "\" value=\"" + n + "\" name=\"" + o + "\">"), s.push("<label class=\"custom-control-label\" for=\"" + e + "\">" + t + "</label>"), s.push("</div>"), s.join("");
       }
     }]);
 
-    return a;
+    return i;
   }();
 
   var l = function () {
@@ -215,9 +215,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       key: "readTableRows",
       value: function readTableRows(t) {
         var e = [];var n = [],
-            s = 0,
-            o = 0;for (;;) {
-          if (o = t.indexOf("\n|", s), s = t.indexOf("|\n", o), -1 === o) break;-1 === s && (s = t.lastIndexOf("|")), n = t.substring(o + 2, s).split("|").map(function (t) {
+            o = 0,
+            s = 0;for (;;) {
+          if (s = t.indexOf("\n|", o), o = t.indexOf("|\n", s), -1 === s) break;-1 === o && (o = t.lastIndexOf("|")), n = t.substring(s + 2, o).split("|").map(function (t) {
             return t.trim();
           }), e.push(n);
         }return 0 === e.length ? [["No rows"]] : e;
@@ -227,13 +227,13 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       value: function convertFromTableDataSet(t) {
         var e = [],
             n = t.getHeaderCollection(),
-            s = t.getRowsCollection();if (n && (e.push("|"), n.forEach(function (t) {
+            o = t.getRowsCollection();if (n && (e.push("|"), n.forEach(function (t) {
           e.push("| " + t + " |");
-        }), e.push("|"), s && e.push("\n")), s) {
-          var _t = 0;s.forEach(function (n) {
+        }), e.push("|"), o && e.push("\n")), o) {
+          var _t = 0;o.forEach(function (n) {
             e.push("|"), n.forEach(function (t) {
               e.push(" " + t + " |");
-            }), s[++_t] && e.push("\n");
+            }), o[++_t] && e.push("\n");
           });
         }return e.join("");
       }
@@ -261,56 +261,63 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     return l;
   }();
 
-  var u = void 0,
-      c = void 0;var d = { settings: { currentItem: 0, totalItems: 0, tableDataSet: i }, components: { counter: $("#navigationCounter"), previousButton: $("#btnPrevious"), nextButton: $("#btnNext"), evidenceTextInput: $("#inputFieldResult"), evidenceTypeSelectInput: $("#inputSelectResultType"), statusSelectInput: $("#inputSelectStatus"), observationTextInput: $("#inputFieldObservation"), resetButton: $("#btnReset"), generateMarkdownButton: $("#btnGenerateTable"), form: $("#formDataNavigator"), fieldSet: $("#fieldSetDataNavigator"), tableTestInfo: $("#tableTestInfo"), headRow: $("#dataHeadRow"), row: $("#dataRow") }, init: function init() {
+  var u = {
+    playBubbleSound: function playBubbleSound() {
+      document.getElementById("bubbleSoundPlayer").play();
+    },
+    playGlupSound: function playGlupSound() {
+      document.getElementById("glupSoundPlayer").play();
+    }
+  };var c = void 0,
+      d = void 0;var m = { settings: { currentItem: 0, totalItems: 0, tableDataSet: a }, components: { counter: $("#navigationCounter"), previousButton: $("#btnPrevious"), nextButton: $("#btnNext"), evidenceTextInput: $("#inputFieldResult"), evidenceTypeSelectInput: $("#inputSelectResultType"), statusSelectInput: $("#inputSelectStatus"), observationTextInput: $("#inputFieldObservation"), resetButton: $("#btnReset"), generateMarkdownButton: $("#btnGenerateTable"), form: $("#formDataNavigator"), fieldSet: $("#fieldSetDataNavigator"), tableTestInfo: $("#tableTestInfo"), headRow: $("#dataHeadRow"), row: $("#dataRow") }, init: function init() {
       this.bindUIActions();
     },
     bindUIActions: function bindUIActions() {
       var _this2 = this;
 
-      u.resetButton.click(function () {
-        u.headRow.html(a.newTableHeader(["Nenhum dado"])), u.row.html(a.newTableRow(["Importe dados de uma tabela markdown"])), _this2.resetFields(), R.clear(), _this2.disableDataNavigator(!0);
-      }), u.nextButton.click(function () {
-        m(), c.currentItem = c.currentItem === c.totalItems ? 1 : c.currentItem + 1, h();
-      }), u.previousButton.click(function () {
-        m(), c.currentItem = 1 === c.currentItem ? c.totalItems : c.currentItem - 1, h();
-      }), u.generateMarkdownButton.click(function () {
-        m();var t = i.exportMarkedColumns(),
-            e = l.convertFromTableDataSet(t);R.setTextAreaContent(e);
+      c.resetButton.click(function () {
+        c.headRow.html(i.newTableHeader(["Nenhum dado"])), c.row.html(i.newTableRow(["Importe dados de uma tabela markdown"])), _this2.resetFields(), x.clear(), _this2.disableDataNavigator(!0);
+      }), c.nextButton.click(function () {
+        u.playBubbleSound(), p(), d.currentItem = d.currentItem === d.totalItems ? 1 : d.currentItem + 1, h();
+      }), c.previousButton.click(function () {
+        u.playBubbleSound(), p(), d.currentItem = 1 === d.currentItem ? d.totalItems : d.currentItem - 1, h();
+      }), c.generateMarkdownButton.click(function () {
+        u.playGlupSound(), p();var t = a.exportMarkedColumns(),
+            e = l.convertFromTableDataSet(t);x.setTextAreaContent(e);
       });
     },
     loadTableDataSet: function loadTableDataSet() {
-      c.currentItem = 1, c.totalItems = c.tableDataSet.countRows(), function () {
-        var t = c.tableDataSet.getHeaderCollection();u.headRow.html(a.newTableHeader(t, { displayBadge: !0, badgeConfig: { columns: c.tableDataSet.settings.markedColumns, text: "export" } })), h();
+      d.currentItem = 1, d.totalItems = d.tableDataSet.countRows(), function () {
+        var t = d.tableDataSet.getHeaderCollection();c.headRow.html(i.newTableHeader(t, { displayBadge: !0, badgeConfig: { columns: d.tableDataSet.settings.markedColumns, text: "export" } })), h();
       }(), this.disableDataNavigator(!1);
     },
     disableDataNavigator: function disableDataNavigator(t) {
-      u.fieldSet.prop("disabled", t);
+      c.fieldSet.prop("disabled", t);
     },
     resetFields: function resetFields() {
-      u.form.trigger("reset");
+      c.form.trigger("reset");
     }
-  };function m() {
-    var t = u.statusSelectInput.val();t = l.getStatusSymbol(t);var e = function () {
+  };function p() {
+    var t = c.statusSelectInput.val();t = l.getStatusSymbol(t);var e = function () {
       var t = [],
-          e = u.evidenceTypeSelectInput.val(),
-          n = u.evidenceTextInput.val().trim(),
-          s = u.observationTextInput.val().trim();n && (t.push(l.convertToImageFormat(n, e)), s && t.push("\n"));return t.push(s), t.join("");
-    }();i.addTestResult({ resultColumnIdentifier: o.STATUS, result: t, itemIndex: c.currentItem - 1 }), i.addTestResult({ resultColumnIdentifier: o.EVIDENCE, result: e, itemIndex: c.currentItem - 1 });
+          e = c.evidenceTypeSelectInput.val(),
+          n = c.evidenceTextInput.val().trim(),
+          o = c.observationTextInput.val().trim();n && (t.push(l.convertToImageFormat(n, e)), o && t.push("\n"));return t.push(o), t.join("");
+    }();a.addTestResult({ resultColumnIdentifier: s.STATUS, result: t, itemIndex: d.currentItem - 1 }), a.addTestResult({ resultColumnIdentifier: s.EVIDENCE, result: e, itemIndex: d.currentItem - 1 });
   }function h() {
-    var t = c.tableDataSet.getRowsCollection();u.row.html(a.newTableRow(t[c.currentItem - 1]));
+    var t = d.tableDataSet.getRowsCollection();c.row.html(i.newTableRow(t[d.currentItem - 1]));
     var _ref5 = function () {
       var t = void 0,
-          e = i.fetchTestResult({ resultColumnIdentifier: o.EVIDENCE, itemIndex: c.currentItem - 1 }),
+          e = a.fetchTestResult({ resultColumnIdentifier: s.EVIDENCE, itemIndex: d.currentItem - 1 }),
           n = "",
-          s = e.indexOf("|thumbnail!");if (r = s, -1 !== r) {
-        s += 11;var _o = e.substring(0, s);n = l.convertFromImageFormat(_o), t = e.substring(s).replace("\n", "");
+          o = e.indexOf("|thumbnail!");if (r = o, -1 !== r) {
+        o += 11;var _s = e.substring(0, o);n = l.convertFromImageFormat(_s), t = e.substring(o).replace("\n", "");
       } else t = e;var r;return { evidenceFilename: n, evidenceObservation: t };
     }(),
         e = _ref5.evidenceFilename,
         n = _ref5.evidenceObservation,
-        s = function () {
-      var t = i.fetchTestResult({ resultColumnIdentifier: o.STATUS, itemIndex: c.currentItem - 1 });return t ? function (t) {
+        o = function () {
+      var t = a.fetchTestResult({ resultColumnIdentifier: s.STATUS, itemIndex: d.currentItem - 1 });return t ? function (t) {
         switch (t) {case "(/)":
             return r.SUCCESS;case "(x)":
             return r.FAILED;case "(!)":
@@ -319,59 +326,59 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }(t) : r.PENDING;
     }();
 
-    u.statusSelectInput.val(s), u.evidenceTextInput.val(e), u.observationTextInput.val(n), function (t) {
-      var e = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : c.totalItems;
-      u.counter.html(t + " / " + e);
-    }(c.currentItem);
-  }u = d.components, c = d.settings;var p = d;var f = void 0;var b = { components: { body: $("#importModalBody"), continueButton: $("#btnImportModalContinue"), warningMessage: $("#warningMessageModal"), theModalItself: $("#importModal") }, init: function init() {
+    c.statusSelectInput.val(o), c.evidenceTextInput.val(e), c.observationTextInput.val(n), function (t) {
+      var e = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : d.totalItems;
+      c.counter.html(t + " / " + e);
+    }(d.currentItem);
+  }c = m.components, d = m.settings;var f = m;var b = void 0;var g = { components: { body: $("#importModalBody"), continueButton: $("#btnImportModalContinue"), warningMessage: $("#warningMessageModal"), theModalItself: $("#importModal") }, init: function init() {
       this.bindUIActions();
     },
     bindUIActions: function bindUIActions() {
-      f.continueButton.click(function () {
-        var t = b.getSelectedCheckBoxes();if (0 === t.length) return void g("Selecione pelo menos um dos itens");var e = function (t) {
+      b.continueButton.click(function () {
+        var t = g.getSelectedCheckBoxes();if (0 === t.length) return void I("Selecione pelo menos um dos itens");var e = function (t) {
           var e = void 0,
-              n = [];return t.each(function (t, s) {
-            e = parseInt(s.getAttribute("value")), n.push(e);
+              n = [];return t.each(function (t, o) {
+            e = parseInt(o.getAttribute("value")), n.push(e);
           }), n;
-        }(t);i.markColumnsForExportation(e);var n = i.exportMarkedColumns(),
-            s = l.convertFromTableDataSet(n);R.setTextAreaContent(s), p.loadTableDataSet(), b.toggle();
-      }), f.theModalItself.on("hide.bs.modal", function () {
-        f.warningMessage.removeClass("show");
+        }(t);a.markColumnsForExportation(e);var n = a.exportMarkedColumns(),
+            o = l.convertFromTableDataSet(n);x.setTextAreaContent(o), f.loadTableDataSet(), g.toggle();
+      }), b.theModalItself.on("hide.bs.modal", function () {
+        b.warningMessage.removeClass("show");
       });
     },
     setImportOptions: function setImportOptions(t) {
-      if (this.clearOptions(), !t) return void g("Nenhum header encontrado");var e = void 0,
+      if (this.clearOptions(), !t) return void I("Nenhum header encontrado");var e = void 0,
           n = 0;t.forEach(function (t) {
-        var s;e = a.newCheckBox({ label: t, id: "option" + n, value: "" + n++, name: "import-options-checkbox" }), s = e, f.body.html(f.body.html() + s);
+        var o;e = i.newCheckBox({ label: t, id: "option" + n, value: "" + n++, name: "import-options-checkbox" }), o = e, b.body.html(b.body.html() + o);
       });
     },
     clearOptions: function clearOptions() {
-      f.body.html("");
+      b.body.html("");
     }, getSelectedCheckBoxes: function getSelectedCheckBoxes() {
       return $("input[name='import-options-checkbox']:checked");
     }, toggle: function toggle() {
       $("#importModal").modal("toggle");
     }
-  };function g(t) {
-    f.warningMessage.html(t), f.warningMessage.addClass("show");
-  }f = b.components;var I = b;var w = void 0;var v = { components: { textArea: $("#codeEditor"), importButton: $("#btnImport"), copyButton: $("#btnCopy") }, init: function init() {
-      w = this.components, this.bindUIActions();
+  };function I(t) {
+    b.warningMessage.html(t), b.warningMessage.addClass("show");
+  }b = g.components;var w = g;var v = void 0;var R = { components: { textArea: $("#codeEditor"), importButton: $("#btnImport"), copyButton: $("#btnCopy") }, init: function init() {
+      v = this.components, this.bindUIActions();
     },
     bindUIActions: function bindUIActions() {
-      w.importButton.click(function () {
-        var t = w.textArea.val();if (!t) return;var e = l.readTableHeader(t),
-            n = l.readTableRows(t);i.clear(), i.setHeaderCollection(e), i.setRowsCollection(n), i.appendTestResultColumns([o.STATUS, o.EVIDENCE]), I.setImportOptions(i.getHeaderCollection()), I.toggle();
-      }), w.copyButton.click(function () {
-        w.textArea.select(), document.execCommand("copy");
+      v.importButton.click(function () {
+        var t = v.textArea.val();if (!t) return;var e = l.readTableHeader(t),
+            n = l.readTableRows(t);a.clear(), a.setHeaderCollection(e), a.setRowsCollection(n), a.appendTestResultColumns([s.STATUS, s.EVIDENCE]), w.setImportOptions(a.getHeaderCollection()), w.toggle();
+      }), v.copyButton.click(function () {
+        u.playGlupSound(), v.textArea.select(), document.execCommand("copy");
       });
     },
     setTextAreaContent: function setTextAreaContent(t) {
-      w.textArea.val(t);
+      v.textArea.val(t);
     },
     clear: function clear() {
       this.components.textArea.val("");
     }
-  };w = v.components;var R = v;window.onload = function () {
-    I.init(), R.init(), p.init(), $('[data-toggle="tooltip"]').tooltip({ delay: { show: 800 } });
+  };v = R.components;var x = R;window.onload = function () {
+    w.init(), x.init(), f.init(), $('[data-toggle="tooltip"]').tooltip({ delay: { show: 800 } });
   };
 }]);

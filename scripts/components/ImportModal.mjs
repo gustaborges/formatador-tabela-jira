@@ -1,4 +1,4 @@
-import { HtmlHelper, MarkdownHelper } from "./CodeHelpers.mjs";
+import { HtmlHelper, MarkdownHelper } from "../common/CodeHelpers.mjs";
 import DataNavigator from "./DataNavigator.mjs";
 import CodeEditor from "./CodeEditor.mjs";
 import {tableDataSet} from "../common/common.mjs";

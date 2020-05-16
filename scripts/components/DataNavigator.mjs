@@ -1,6 +1,7 @@
 import CodeEditor from "./CodeEditor.mjs";
-import { HtmlHelper, MarkdownHelper } from "./CodeHelpers.mjs";
+import { HtmlHelper, MarkdownHelper } from "../common/CodeHelpers.mjs";
 import { tableDataSet, TestResultColumnsEnum, TestStatusEnum, getStatusFromSymbol, found } from "../common/common.mjs";
+import SoundEffects from "../common/SoundEffects";
 
 let c, s;
 
@@ -59,6 +60,7 @@ const DataNavigator = {
         })
 
         c.nextButton.click(() => {
+            SoundEffects.playBubbleSound();
             saveChangesCurrentItem();
 
             s.currentItem = (s.currentItem === s.totalItems) ? 1 : s.currentItem + 1;
@@ -66,6 +68,7 @@ const DataNavigator = {
         });
 
         c.previousButton.click(() => {
+            SoundEffects.playBubbleSound();
             saveChangesCurrentItem();
             s.currentItem = (s.currentItem === 1) ? s.totalItems : s.currentItem - 1;
 
@@ -73,6 +76,7 @@ const DataNavigator = {
         });
 
         c.generateMarkdownButton.click(() => {
+            SoundEffects.playGlupSound();
             saveChangesCurrentItem();
             const exportedDataSet = tableDataSet.exportMarkedColumns();
             const markdownCode = MarkdownHelper.convertFromTableDataSet(exportedDataSet);

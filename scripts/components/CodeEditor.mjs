@@ -1,7 +1,7 @@
 import ImportModal from "./ImportModal.mjs";
-import { MarkdownHelper } from "./CodeHelpers.mjs";
-
+import { MarkdownHelper } from "../common/CodeHelpers.mjs";
 import { TestResultColumnsEnum, tableDataSet } from "../common/common.mjs";
+import SoundEffects from "../common/SoundEffects";
 
 let c;
 
@@ -45,6 +45,7 @@ const CodeEditor = {
         });
 
         c.copyButton.click(function() {
+            SoundEffects.playGlupSound();
             c.textArea.select();
             document.execCommand("copy");
         });
