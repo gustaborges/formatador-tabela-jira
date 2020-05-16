@@ -2,17 +2,19 @@
 <html lang="pt">
 
 <head>
-  <!-- build:css css/main.css -->
 
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <!-- Bootstrap CSS -->
-  <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css" />
-  <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.min.css" />
+
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;500;700&display=swap" rel="stylesheet">
+  <!-- build:css css/main.css -->
+  <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.min.css">
   <link rel="stylesheet" href="css/styles.css"/>
   <!-- endbuild -->
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;500;700&display=swap" rel="stylesheet">
+
   <title>Formatador - Execução de Teste</title>
+    
 </head>
 
 <body>
@@ -52,11 +54,11 @@
     <!--Header-->
     <header class="row">
       <div class="col-12">
-        <h2>Resultado das Execuções</h2>
+        <h2>Editor de Resultados</h2>
       </div>
 
       <div class="col-12 mt-3">
-            <h3 class="light-weight">Editor de Resultados</h3>
+            <h3 class="light-weight">Teste com Formatação de Tabela</h3>
       </div>
     </header>
 
@@ -172,12 +174,13 @@
       </div>
     </main>
   </div>
-  <!-- build:js js/scripts.js -->
+
+  <!-- build:js js/main.bundle.js -->
   <script src="node_modules/jquery/dist/jquery.slim.min.js"></script>
   <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
   <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+  <script src="transpiledjs/es5bundle.js"></script>
   <!-- endbuild -->
-  <script src="scripts/main.mjs" type="module"></script>
 
 </body>
 
