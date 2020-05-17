@@ -1,7 +1,8 @@
-import { HtmlHelper, MarkdownHelper } from "../common/CodeHelpers.mjs";
-import DataNavigator from "./DataNavigator.mjs";
-import CodeEditor from "./CodeEditor.mjs";
-import {tableDataSet} from "../common/common.mjs";
+import { HtmlHelper, MarkdownHelper } from "../common/CodeHelpers.js";
+import DataNavigator from "./DataNavigator.js";
+import CodeEditor from "./CodeEditor.js";
+import {tableDataSet} from "../common/common.js";
+import SoundEffects from "../common/SoundEffects.js";
 
 let c;
 
@@ -26,6 +27,8 @@ const ImportModal = {
     bindUIActions() {
         
         c.continueButton.click(function() {
+            SoundEffects.playGlupSound();
+
             let markedCheckboxes = ImportModal.getSelectedCheckBoxes();
 
             if (markedCheckboxes.length === 0) {

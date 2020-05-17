@@ -148,13 +148,13 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
   }();
 
   var s = Object.freeze({ STATUS: "Status", EVIDENCE: "Evidência" }),
-      r = Object.freeze({ FAILED: "failed", SUCCESS: "success", ALERT: "alert", PENDING: "pending" });var a = new o();
-  var i = function () {
-    function i() {
-      _classCallCheck(this, i);
+      r = Object.freeze({ FAILED: "failed", SUCCESS: "success", ALERT: "alert", PENDING: "pending" });var i = new o();
+  var a = function () {
+    function a() {
+      _classCallCheck(this, a);
     }
 
-    _createClass(i, null, [{
+    _createClass(a, null, [{
       key: "newTableHeader",
       value: function newTableHeader(t) {
         var _ref3 = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {},
@@ -169,8 +169,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             o = _ref3$badgeConfig$tex === undefined ? "" : _ref3$badgeConfig$tex;
         t || (t = ["Empty"]);var s = "",
             r = "",
-            a = 0;return e && (r = "<span class=\"badge badge-pill badge-pale\">" + o + "</span>"), t.forEach(function (t) {
-          n.includes(a++) ? s += "<th>" + t + " " + r + "</th>" : s += "<th>" + t + "</th>";
+            i = 0;return e && (r = "<span class=\"badge badge-pill badge-pale\">" + o + "</span>"), t.forEach(function (t) {
+          n.includes(i++) ? s += "<th>" + t + " " + r + "</th>" : s += "<th>" + t + "</th>";
         }), s;
       }
     }, {
@@ -195,7 +195,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }
     }]);
 
-    return i;
+    return a;
   }();
 
   var l = function () {
@@ -262,53 +262,59 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
   }();
 
   var u = {
-    playBubbleSound: function playBubbleSound() {
-      document.getElementById("bubbleSoundPlayer").play();
+    init: function init() {
+      var t = document.createElement("audio");t.setAttribute("src", "https://www.mboxdrive.com/bubble_pop.mp3"), u.sounds.bubbleSound = t, t = document.createElement("audio"), t.setAttribute("src", "https://www.mboxdrive.com/glup_effect.mp3"), u.sounds.glubSound = t, t = document.createElement("audio"), t.setAttribute("src", "https://www.mboxdrive.com/open_pop.mp3"), u.sounds.poppingSound = t;
+    },
+    sounds: { bubbleSound: void 0, glubSound: void 0, poppingSound: void 0 }, playBubbleSound: function playBubbleSound() {
+      u.sounds.bubbleSound.play();
     },
     playGlupSound: function playGlupSound() {
-      document.getElementById("glupSoundPlayer").play();
+      u.sounds.glubSound.play();
+    },
+    playPoppingSound: function playPoppingSound() {
+      u.sounds.poppingSound.play();
     }
-  };var c = void 0,
-      d = void 0;var m = { settings: { currentItem: 0, totalItems: 0, tableDataSet: a }, components: { counter: $("#navigationCounter"), previousButton: $("#btnPrevious"), nextButton: $("#btnNext"), evidenceTextInput: $("#inputFieldResult"), evidenceTypeSelectInput: $("#inputSelectResultType"), statusSelectInput: $("#inputSelectStatus"), observationTextInput: $("#inputFieldObservation"), resetButton: $("#btnReset"), generateMarkdownButton: $("#btnGenerateTable"), form: $("#formDataNavigator"), fieldSet: $("#fieldSetDataNavigator"), tableTestInfo: $("#tableTestInfo"), headRow: $("#dataHeadRow"), row: $("#dataRow") }, init: function init() {
+  };var c = u;var d = void 0,
+      p = void 0;var m = { settings: { currentItem: 0, totalItems: 0, tableDataSet: i }, components: { counter: $("#navigationCounter"), previousButton: $("#btnPrevious"), nextButton: $("#btnNext"), evidenceTextInput: $("#inputFieldResult"), evidenceTypeSelectInput: $("#inputSelectResultType"), statusSelectInput: $("#inputSelectStatus"), observationTextInput: $("#inputFieldObservation"), resetButton: $("#btnReset"), generateMarkdownButton: $("#btnGenerateTable"), form: $("#formDataNavigator"), fieldSet: $("#fieldSetDataNavigator"), tableTestInfo: $("#tableTestInfo"), headRow: $("#dataHeadRow"), row: $("#dataRow") }, init: function init() {
       this.bindUIActions();
     },
     bindUIActions: function bindUIActions() {
       var _this2 = this;
 
-      c.resetButton.click(function () {
-        c.headRow.html(i.newTableHeader(["Nenhum dado"])), c.row.html(i.newTableRow(["Importe dados de uma tabela markdown"])), _this2.resetFields(), x.clear(), _this2.disableDataNavigator(!0);
-      }), c.nextButton.click(function () {
-        u.playBubbleSound(), p(), d.currentItem = d.currentItem === d.totalItems ? 1 : d.currentItem + 1, h();
-      }), c.previousButton.click(function () {
-        u.playBubbleSound(), p(), d.currentItem = 1 === d.currentItem ? d.totalItems : d.currentItem - 1, h();
-      }), c.generateMarkdownButton.click(function () {
-        u.playGlupSound(), p();var t = a.exportMarkedColumns(),
+      d.resetButton.click(function () {
+        c.playPoppingSound(), d.headRow.html(a.newTableHeader(["Nenhum dado"])), d.row.html(a.newTableRow(["Importe dados de uma tabela markdown"])), _this2.resetFields(), x.clear(), _this2.disableDataNavigator(!0);
+      }), d.nextButton.click(function () {
+        c.playBubbleSound(), h(), p.currentItem = p.currentItem === p.totalItems ? 1 : p.currentItem + 1, b();
+      }), d.previousButton.click(function () {
+        c.playBubbleSound(), h(), p.currentItem = 1 === p.currentItem ? p.totalItems : p.currentItem - 1, b();
+      }), d.generateMarkdownButton.click(function () {
+        c.playGlupSound(), h();var t = i.exportMarkedColumns(),
             e = l.convertFromTableDataSet(t);x.setTextAreaContent(e);
       });
     },
     loadTableDataSet: function loadTableDataSet() {
-      d.currentItem = 1, d.totalItems = d.tableDataSet.countRows(), function () {
-        var t = d.tableDataSet.getHeaderCollection();c.headRow.html(i.newTableHeader(t, { displayBadge: !0, badgeConfig: { columns: d.tableDataSet.settings.markedColumns, text: "export" } })), h();
+      p.currentItem = 1, p.totalItems = p.tableDataSet.countRows(), function () {
+        var t = p.tableDataSet.getHeaderCollection();d.headRow.html(a.newTableHeader(t, { displayBadge: !0, badgeConfig: { columns: p.tableDataSet.settings.markedColumns, text: "export" } })), b();
       }(), this.disableDataNavigator(!1);
     },
     disableDataNavigator: function disableDataNavigator(t) {
-      c.fieldSet.prop("disabled", t);
+      d.fieldSet.prop("disabled", t);
     },
     resetFields: function resetFields() {
-      c.form.trigger("reset");
+      d.form.trigger("reset");
     }
-  };function p() {
-    var t = c.statusSelectInput.val();t = l.getStatusSymbol(t);var e = function () {
+  };function h() {
+    var t = d.statusSelectInput.val();t = l.getStatusSymbol(t);var e = function () {
       var t = [],
-          e = c.evidenceTypeSelectInput.val(),
-          n = c.evidenceTextInput.val().trim(),
-          o = c.observationTextInput.val().trim();n && (t.push(l.convertToImageFormat(n, e)), o && t.push("\n"));return t.push(o), t.join("");
-    }();a.addTestResult({ resultColumnIdentifier: s.STATUS, result: t, itemIndex: d.currentItem - 1 }), a.addTestResult({ resultColumnIdentifier: s.EVIDENCE, result: e, itemIndex: d.currentItem - 1 });
-  }function h() {
-    var t = d.tableDataSet.getRowsCollection();c.row.html(i.newTableRow(t[d.currentItem - 1]));
+          e = d.evidenceTypeSelectInput.val(),
+          n = d.evidenceTextInput.val().trim(),
+          o = d.observationTextInput.val().trim();n && (t.push(l.convertToImageFormat(n, e)), o && t.push("\n"));return t.push(o), t.join("");
+    }();i.addTestResult({ resultColumnIdentifier: s.STATUS, result: t, itemIndex: p.currentItem - 1 }), i.addTestResult({ resultColumnIdentifier: s.EVIDENCE, result: e, itemIndex: p.currentItem - 1 });
+  }function b() {
+    var t = p.tableDataSet.getRowsCollection();d.row.html(a.newTableRow(t[p.currentItem - 1]));
     var _ref5 = function () {
       var t = void 0,
-          e = a.fetchTestResult({ resultColumnIdentifier: s.EVIDENCE, itemIndex: d.currentItem - 1 }),
+          e = i.fetchTestResult({ resultColumnIdentifier: s.EVIDENCE, itemIndex: p.currentItem - 1 }),
           n = "",
           o = e.indexOf("|thumbnail!");if (r = o, -1 !== r) {
         o += 11;var _s = e.substring(0, o);n = l.convertFromImageFormat(_s), t = e.substring(o).replace("\n", "");
@@ -317,7 +323,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         e = _ref5.evidenceFilename,
         n = _ref5.evidenceObservation,
         o = function () {
-      var t = a.fetchTestResult({ resultColumnIdentifier: s.STATUS, itemIndex: d.currentItem - 1 });return t ? function (t) {
+      var t = i.fetchTestResult({ resultColumnIdentifier: s.STATUS, itemIndex: p.currentItem - 1 });return t ? function (t) {
         switch (t) {case "(/)":
             return r.SUCCESS;case "(x)":
             return r.FAILED;case "(!)":
@@ -326,59 +332,59 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }(t) : r.PENDING;
     }();
 
-    c.statusSelectInput.val(o), c.evidenceTextInput.val(e), c.observationTextInput.val(n), function (t) {
-      var e = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : d.totalItems;
-      c.counter.html(t + " / " + e);
-    }(d.currentItem);
-  }c = m.components, d = m.settings;var f = m;var b = void 0;var g = { components: { body: $("#importModalBody"), continueButton: $("#btnImportModalContinue"), warningMessage: $("#warningMessageModal"), theModalItself: $("#importModal") }, init: function init() {
+    d.statusSelectInput.val(o), d.evidenceTextInput.val(e), d.observationTextInput.val(n), function (t) {
+      var e = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : p.totalItems;
+      d.counter.html(t + " / " + e);
+    }(p.currentItem);
+  }d = m.components, p = m.settings;var f = m;var g = void 0;var w = { components: { body: $("#importModalBody"), continueButton: $("#btnImportModalContinue"), warningMessage: $("#warningMessageModal"), theModalItself: $("#importModal") }, init: function init() {
       this.bindUIActions();
     },
     bindUIActions: function bindUIActions() {
-      b.continueButton.click(function () {
-        var t = g.getSelectedCheckBoxes();if (0 === t.length) return void I("Selecione pelo menos um dos itens");var e = function (t) {
+      g.continueButton.click(function () {
+        c.playGlupSound();var t = w.getSelectedCheckBoxes();if (0 === t.length) return void I("Selecione pelo menos um dos itens");var e = function (t) {
           var e = void 0,
               n = [];return t.each(function (t, o) {
             e = parseInt(o.getAttribute("value")), n.push(e);
           }), n;
-        }(t);a.markColumnsForExportation(e);var n = a.exportMarkedColumns(),
-            o = l.convertFromTableDataSet(n);x.setTextAreaContent(o), f.loadTableDataSet(), g.toggle();
-      }), b.theModalItself.on("hide.bs.modal", function () {
-        b.warningMessage.removeClass("show");
+        }(t);i.markColumnsForExportation(e);var n = i.exportMarkedColumns(),
+            o = l.convertFromTableDataSet(n);x.setTextAreaContent(o), f.loadTableDataSet(), w.toggle();
+      }), g.theModalItself.on("hide.bs.modal", function () {
+        g.warningMessage.removeClass("show");
       });
     },
     setImportOptions: function setImportOptions(t) {
       if (this.clearOptions(), !t) return void I("Nenhum header encontrado");var e = void 0,
           n = 0;t.forEach(function (t) {
-        var o;e = i.newCheckBox({ label: t, id: "option" + n, value: "" + n++, name: "import-options-checkbox" }), o = e, b.body.html(b.body.html() + o);
+        var o;e = a.newCheckBox({ label: t, id: "option" + n, value: "" + n++, name: "import-options-checkbox" }), o = e, g.body.html(g.body.html() + o);
       });
     },
     clearOptions: function clearOptions() {
-      b.body.html("");
+      g.body.html("");
     }, getSelectedCheckBoxes: function getSelectedCheckBoxes() {
       return $("input[name='import-options-checkbox']:checked");
     }, toggle: function toggle() {
       $("#importModal").modal("toggle");
     }
   };function I(t) {
-    b.warningMessage.html(t), b.warningMessage.addClass("show");
-  }b = g.components;var w = g;var v = void 0;var R = { components: { textArea: $("#codeEditor"), importButton: $("#btnImport"), copyButton: $("#btnCopy") }, init: function init() {
-      v = this.components, this.bindUIActions();
+    g.warningMessage.html(t), g.warningMessage.addClass("show");
+  }g = w.components;var v = w;var S = void 0;var R = { components: { textArea: $("#codeEditor"), importButton: $("#btnImport"), copyButton: $("#btnCopy") }, init: function init() {
+      S = this.components, this.bindUIActions();
     },
     bindUIActions: function bindUIActions() {
-      v.importButton.click(function () {
-        var t = v.textArea.val();if (!t) return;var e = l.readTableHeader(t),
-            n = l.readTableRows(t);a.clear(), a.setHeaderCollection(e), a.setRowsCollection(n), a.appendTestResultColumns([s.STATUS, s.EVIDENCE]), w.setImportOptions(a.getHeaderCollection()), w.toggle();
-      }), v.copyButton.click(function () {
-        u.playGlupSound(), v.textArea.select(), document.execCommand("copy");
+      S.importButton.click(function () {
+        c.playGlupSound();var t = S.textArea.val();if (!t) return;var e = l.readTableHeader(t),
+            n = l.readTableRows(t);i.clear(), i.setHeaderCollection(e), i.setRowsCollection(n), i.appendTestResultColumns([s.STATUS, s.EVIDENCE]), v.setImportOptions(i.getHeaderCollection()), v.toggle();
+      }), S.copyButton.click(function () {
+        c.playGlupSound(), S.textArea.select(), document.execCommand("copy");
       });
     },
     setTextAreaContent: function setTextAreaContent(t) {
-      v.textArea.val(t);
+      S.textArea.val(t);
     },
     clear: function clear() {
       this.components.textArea.val("");
     }
-  };v = R.components;var x = R;window.onload = function () {
-    w.init(), x.init(), f.init(), $('[data-toggle="tooltip"]').tooltip({ delay: { show: 800 } });
+  };S = R.components;var x = R;window.onload = function () {
+    c.init(), v.init(), x.init(), f.init(), $('[data-toggle="tooltip"]').tooltip({ delay: { show: 800 } });
   };
 }]);

@@ -1,7 +1,7 @@
-import ImportModal from "./ImportModal.mjs";
-import { MarkdownHelper } from "../common/CodeHelpers.mjs";
-import { TestResultColumnsEnum, tableDataSet } from "../common/common.mjs";
-import SoundEffects from "../common/SoundEffects";
+import ImportModal from "./ImportModal.js";
+import { MarkdownHelper } from "../common/CodeHelpers.js";
+import { TestResultColumnsEnum, tableDataSet } from "../common/common.js";
+import SoundEffects from "../common/SoundEffects.js";
 
 let c;
 
@@ -27,6 +27,7 @@ const CodeEditor = {
     bindUIActions() {
 
         c.importButton.click(function() {
+            SoundEffects.playGlupSound();
             const markdownCode = c.textArea.val();
         
             if(!markdownCode) // then code editor is empty

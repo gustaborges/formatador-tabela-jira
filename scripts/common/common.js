@@ -1,4 +1,4 @@
-import TableDataSet from "./TestDataSet.mjs";
+import TableDataSet from "./TestDataSet.js";
 
 
 /**

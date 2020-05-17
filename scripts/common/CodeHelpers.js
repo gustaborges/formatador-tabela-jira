@@ -1,5 +1,5 @@
-import TableDataSet from './TestDataSet.mjs'
-import { TestStatusEnum } from './common.mjs';
+import TableDataSet from './TestDataSet.js'
+import { TestStatusEnum } from './common.js';
 
 /**
  * @description Provides static methods for creating HTML content.

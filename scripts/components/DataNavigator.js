@@ -1,7 +1,7 @@
-import CodeEditor from "./CodeEditor.mjs";
-import { HtmlHelper, MarkdownHelper } from "../common/CodeHelpers.mjs";
-import { tableDataSet, TestResultColumnsEnum, TestStatusEnum, getStatusFromSymbol, found } from "../common/common.mjs";
-import SoundEffects from "../common/SoundEffects";
+import CodeEditor from "./CodeEditor.js";
+import { HtmlHelper, MarkdownHelper } from "../common/CodeHelpers.js";
+import { tableDataSet, TestResultColumnsEnum, TestStatusEnum, getStatusFromSymbol, found } from "../common/common.js";
+import SoundEffects from "../common/SoundEffects.js";
 
 let c, s;
 
@@ -50,8 +50,9 @@ const DataNavigator = {
     * This method is called by init() function and binds event listeners to interface elements.
     */
     bindUIActions(){
-
         c.resetButton.click(() => {
+            SoundEffects.playPoppingSound();
+
             c.headRow.html(HtmlHelper.newTableHeader(['Nenhum dado']));
             c.row.html(HtmlHelper.newTableRow(['Importe dados de uma tabela markdown']));
             this.resetFields();
