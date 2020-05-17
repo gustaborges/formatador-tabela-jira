@@ -155,7 +155,7 @@ function displayCurrentItemFirstTime() {
             displayBadge:true,            
             badgeConfig: {
                 columns: s.tableDataSet.settings.markedColumns,
-                text: "export"
+                text: "result."
             }
         }));
 

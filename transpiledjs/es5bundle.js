@@ -300,7 +300,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     },
     loadTableDataSet: function loadTableDataSet() {
       p.currentItem = 1, p.totalItems = p.tableDataSet.countRows(), function () {
-        var t = p.tableDataSet.getHeaderCollection();d.headRow.html(i.newTableHeader(t, { displayBadge: !0, badgeConfig: { columns: p.tableDataSet.settings.markedColumns, text: "export" } })), b();
+        var t = p.tableDataSet.getHeaderCollection();d.headRow.html(i.newTableHeader(t, { displayBadge: !0, badgeConfig: { columns: p.tableDataSet.settings.markedColumns, text: "result." } })), b();
       }(), this.disableDataNavigator(!1);
     },
     disableDataNavigator: function disableDataNavigator(t) {
