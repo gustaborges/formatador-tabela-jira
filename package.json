@@ -14,9 +14,9 @@
     "babel": "babel --presets es2015 \"transpiledjs/es6bundle.js\" -o \"transpiledjs/es5bundle.js\"",
     "clean": "rimraf dist",
     "copyfonts": "copyfiles -f node_modules/font-awesome/fonts/* dist/fonts",
-    "copyjs": "copyfiles es5bundle.js dist/js",
+    "copyfavicon": "ncp favicon.ico dist/favicon.ico",
     "usemin": "usemin index.html -d dist --htmlmin -o dist/index.html && usemin editor-leitura-tabela.html -d dist --htmlmin -o dist/editor-leitura-tabela.html && usemin links-uteis.html -d dist --htmlmin -o dist/links-uteis.html",
-    "build": "npm run clean && npm run copyfonts && npm run transpilejs && npm run copyjs && npm run usemin"
+    "build": "npm run clean && npm run copyfonts  && npm run copyfavicon && npm run transpilejs && npm run usemin"
   },
   "author": "",
   "license": "ISC",
