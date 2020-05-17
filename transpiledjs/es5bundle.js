@@ -375,7 +375,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         c.playGlupSound();var t = S.textArea.val();if (!t) return;var e = l.readTableHeader(t),
             n = l.readTableRows(t);i.clear(), i.setHeaderCollection(e), i.setRowsCollection(n), i.appendTestResultColumns([s.STATUS, s.EVIDENCE]), v.setImportOptions(i.getHeaderCollection()), v.toggle();
       }), S.copyButton.click(function () {
-        c.playGlupSound(), S.textArea.select(), document.execCommand("copy");
+        c.playPoppingSound(), S.textArea.select(), document.execCommand("copy");
       });
     },
     setTextAreaContent: function setTextAreaContent(t) {
