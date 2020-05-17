@@ -253,3 +253,15 @@ td {
 select {
   font-family: 'FontAwesome', 'Roboto'
 }
+
+.bgStatusSuccess {
+  background-color: #a5de8b;
+}
+
+.bgStatusAlert {
+  background-color: #ffe38b;
+}
+
+.bgStatusFailed {
+  background-color: #ff9595;
+}

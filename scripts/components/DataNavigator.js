@@ -25,6 +25,7 @@ const DataNavigator = {
         evidenceTextInput: $('#inputFieldResult'),
         evidenceTypeSelectInput: $('#inputSelectResultType'),
         statusSelectInput: $("#inputSelectStatus"),
+        statusLabel: $("#statusLabel"),
         observationTextInput: $('#inputFieldObservation'),
         resetButton: $("#btnReset"),
         generateMarkdownButton: $("#btnGenerateTable"),
@@ -82,6 +83,18 @@ const DataNavigator = {
             const exportedDataSet = tableDataSet.exportMarkedColumns();
             const markdownCode = MarkdownHelper.convertFromTableDataSet(exportedDataSet);
             CodeEditor.setTextAreaContent(markdownCode);
+        });
+
+        c.statusSelectInput.change(() => {
+            const selectedValue = c.statusSelectInput.val();
+            c.statusLabel.removeClass(['bgStatusSuccess', 'bgStatusAlert', 'bgStatusFailed']);
+
+            switch(selectedValue) {
+                case TestStatusEnum.SUCCESS : c.statusLabel.addClass('bgStatusSuccess'); return;
+                case TestStatusEnum.ALERT : c.statusLabel.addClass('bgStatusAlert'); return;
+                case TestStatusEnum.FAILED : c.statusLabel.addClass('bgStatusFailed'); return;
+                default : return;
+            }
         });
     },
 
@@ -160,6 +173,8 @@ function displayCurrentItem() {
     c.statusSelectInput.val(status);
     c.evidenceTextInput.val(evidenceFilename);
     c.observationTextInput.val(evidenceObservation);
+
+    c.statusSelectInput.trigger('change'); // triggers the event so that the label color gets updated
 
     updateCounter(s.currentItem);
 }
