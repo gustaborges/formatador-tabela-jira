@@ -121,6 +121,7 @@ const DataNavigator = {
 
     resetFields() {
         c.form.trigger('reset');
+        c.statusSelectInput.change(); // updates status' label color
     }
 }
 
@@ -174,7 +175,7 @@ function displayCurrentItem() {
     c.evidenceTextInput.val(evidenceFilename);
     c.observationTextInput.val(evidenceObservation);
 
-    c.statusSelectInput.trigger('change'); // triggers the event so that the label color gets updated
+    c.statusSelectInput.change();
 
     updateCounter(s.currentItem);
 }

@@ -307,7 +307,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       d.fieldSet.prop("disabled", t);
     },
     resetFields: function resetFields() {
-      d.form.trigger("reset");
+      d.form.trigger("reset"), d.statusSelectInput.change();
     }
   };function h() {
     var t = d.statusSelectInput.val();t = l.getStatusSymbol(t);var e = function () {
@@ -338,42 +338,42 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }(t) : r.PENDING;
     }();
 
-    d.statusSelectInput.val(s), d.evidenceTextInput.val(e), d.observationTextInput.val(n), d.statusSelectInput.trigger("change"), function (t) {
+    d.statusSelectInput.val(s), d.evidenceTextInput.val(e), d.observationTextInput.val(n), d.statusSelectInput.change(), function (t) {
       var e = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : p.totalItems;
       d.counter.html(t + " / " + e);
     }(p.currentItem);
-  }d = m.components, p = m.settings;var g = m;var f = void 0;var S = { components: { body: $("#importModalBody"), continueButton: $("#btnImportModalContinue"), warningMessage: $("#warningMessageModal"), theModalItself: $("#importModal") }, init: function init() {
+  }d = m.components, p = m.settings;var f = m;var g = void 0;var S = { components: { body: $("#importModalBody"), continueButton: $("#btnImportModalContinue"), warningMessage: $("#warningMessageModal"), theModalItself: $("#importModal") }, init: function init() {
       this.bindUIActions();
     },
     bindUIActions: function bindUIActions() {
-      f.continueButton.click(function () {
+      g.continueButton.click(function () {
         c.playGlupSound();var t = S.getSelectedCheckBoxes();if (0 === t.length) return void w("Selecione pelo menos um dos itens");var e = function (t) {
           var e = void 0,
               n = [];return t.each(function (t, s) {
             e = parseInt(s.getAttribute("value")), n.push(e);
           }), n;
         }(t);a.markColumnsForExportation(e);var n = a.exportMarkedColumns(),
-            s = l.convertFromTableDataSet(n);C.setTextAreaContent(s), g.loadTableDataSet(), S.toggle();
-      }), f.theModalItself.on("hide.bs.modal", function () {
-        f.warningMessage.removeClass("show");
+            s = l.convertFromTableDataSet(n);C.setTextAreaContent(s), f.loadTableDataSet(), S.toggle();
+      }), g.theModalItself.on("hide.bs.modal", function () {
+        g.warningMessage.removeClass("show");
       });
     },
     setImportOptions: function setImportOptions(t) {
       if (this.clearOptions(), !t) return void w("Nenhum header encontrado");var e = void 0,
           n = 0;t.forEach(function (t) {
-        var s;e = i.newCheckBox({ label: t, id: "option" + n, value: "" + n++, name: "import-options-checkbox" }), s = e, f.body.html(f.body.html() + s);
+        var s;e = i.newCheckBox({ label: t, id: "option" + n, value: "" + n++, name: "import-options-checkbox" }), s = e, g.body.html(g.body.html() + s);
       });
     },
     clearOptions: function clearOptions() {
-      f.body.html("");
+      g.body.html("");
     }, getSelectedCheckBoxes: function getSelectedCheckBoxes() {
       return $("input[name='import-options-checkbox']:checked");
     }, toggle: function toggle() {
       $("#importModal").modal("toggle");
     }
   };function w(t) {
-    f.warningMessage.html(t), f.warningMessage.addClass("show");
-  }f = S.components;var I = S;var v = void 0;var R = { components: { textArea: $("#codeEditor"), importButton: $("#btnImport"), copyButton: $("#btnCopy") }, init: function init() {
+    g.warningMessage.html(t), g.warningMessage.addClass("show");
+  }g = S.components;var I = S;var v = void 0;var R = { components: { textArea: $("#codeEditor"), importButton: $("#btnImport"), copyButton: $("#btnCopy") }, init: function init() {
       v = this.components, this.bindUIActions();
     },
     bindUIActions: function bindUIActions() {
@@ -391,6 +391,6 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       this.components.textArea.val("");
     }
   };v = R.components;var C = R;window.onload = function () {
-    c.init(), I.init(), C.init(), g.init(), $('[data-toggle="tooltip"]').tooltip({ delay: { show: 800 } });
+    c.init(), I.init(), C.init(), f.init(), $('[data-toggle="tooltip"]').tooltip({ delay: { show: 800 } });
   };
 }]);
