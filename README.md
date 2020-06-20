@@ -1,22 +1,21 @@
-# Editor e Formatador de Testes
+# Jira Markdown: Formatador de resultados de testes em tabela
 
-https://editorderesultados.netlify.app/
+Aplicação web que gerar uma tabela que documenta resultados de execução de testes a partir da leitura de uma tabela base de testes.
 
-Pequeno projeto para padronizar e agilizar a montagem de resultados de testes, a partir da leitura de uma tabela base de testes.
-
-O fluxo se dá da seguinte maneira:
-
-Tabela Base de Testes -> Processamento -> Tabela de Resultados
 
 ## Como testar:
 - Acessar https://editorderesultados.netlify.app/editor-leitura-tabela.html
 
-No editor de código, insira o seguinte exemplo de tabela de teste:
+1. No editor de código, inserir uma sintaxe de tabela utilizando o markdown do Jira. Exemplo:
+<blockquote>
+|| Descrição || Descrição 2 ||
+  <br>
+| Teste 1 | Lorem ipsum |
+  <br>
+| Teste 2 | dolor sit amet |
+</blockquote>
 
-<code>
-  <p>|| Descrição ||</p>
-  <p>| Exemplo de descrição de teste |</p>
-  <p>| Exemplo 2 de descrição de teste |</p>
-</code>
-
-Clicar em "Importar", selecionar as colunas para inclusão na tabela de resultados. Com a tabela importada, navegar entre os testes, atribuindo-lhes resultados e depois clicar em "Gerar Tabela".
+2. Clicar em "Importar"
+3. Selecionar as colunas para inclusão na tabela de resultados
+4. Navegar entre os testes e atribuir os resultados de sua execução
+5. Clicar em "Gerar Tabela".
