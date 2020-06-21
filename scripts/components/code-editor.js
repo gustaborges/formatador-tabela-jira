@@ -46,7 +46,7 @@ const CodeEditor = {
         });
 
         c.copyButton.click(function() {
-            SoundEffects.playPoppingSound();
+            SoundEffects.playSwipingSound();
             c.textArea.select();
             document.execCommand("copy");
         });
