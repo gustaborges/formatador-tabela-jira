@@ -55,7 +55,7 @@ const DataNavigator = {
             SoundEffects.playSwipingSound();
 
             c.headRow.html(HtmlHelper.newTableHeader(['Nenhum dado']));
-            c.row.html(HtmlHelper.newTableRow(['Importe dados de uma tabela markdown']));
+            c.row.html(HtmlHelper.newTableRow(['Importe dados de uma tabela markdown do Jira']));
             this.resetFields();
             CodeEditor.clear();
             this.disableDataNavigator(true);
