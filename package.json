@@ -15,8 +15,9 @@
     "clean": "rimraf dist",
     "copyfonts": "copyfiles -f node_modules/font-awesome/fonts/* dist/fonts",
     "copyfavicon": "ncp favicon.ico dist/favicon.ico",
+    "copyscript": "ncp scripts dist/scripts",
     "usemin": "usemin index.html -d dist --htmlmin -o dist/index.html && usemin editor-leitura-tabela.html -d dist --htmlmin -o dist/editor-leitura-tabela.html && usemin links-uteis.html -d dist --htmlmin -o dist/links-uteis.html",
-    "build": "npm run clean && npm run copyfonts  && npm run copyfavicon && npm run transpilejs && npm run usemin"
+    "build": "npm run clean && npm run copyfonts  && npm run copyfavicon && npm run copyscript && npm run usemin"
   },
   "author": "",
   "license": "ISC",
@@ -42,12 +43,9 @@
     "babel-cli": "^6.26.0"
   },
   "dependencies": {
-    "bootstrap": "^4.4.1",
     "copyfiles": "^2.2.0",
     "font-awesome": "^4.7.0",
-    "jquery": "^3.5.1",
     "ncp": "^2.0.0",
-    "onchange": "^7.0.2",
-    "popper.js": "^1.16.1"
+    "onchange": "^7.0.2"
   }
 }
