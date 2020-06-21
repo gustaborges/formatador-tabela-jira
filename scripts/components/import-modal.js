@@ -1,8 +1,8 @@
-import { HtmlHelper, MarkdownHelper } from "../common/CodeHelpers.js";
-import DataNavigator from "./DataNavigator.js";
-import CodeEditor from "./CodeEditor.js";
+import { HtmlHelper, MarkdownHelper } from "../common/code-helpers.js";
+import DataNavigator from "./data-navigator.js";
+import CodeEditor from "./code-editor.js";
 import {tableDataSet} from "../common/common.js";
-import SoundEffects from "../common/SoundEffects.js";
+import SoundEffects from "../common/sound-effects.js";
 
 let c;
 
