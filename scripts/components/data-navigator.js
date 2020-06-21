@@ -1,7 +1,7 @@
-import CodeEditor from "./CodeEditor.js";
-import { HtmlHelper, MarkdownHelper } from "../common/CodeHelpers.js";
+import CodeEditor from "./code-editor.js";
+import { HtmlHelper, MarkdownHelper } from "../common/code-helpers.js";
 import { tableDataSet, TestResultColumnsEnum, TestStatusEnum, getStatusFromSymbol, found } from "../common/common.js";
-import SoundEffects from "../common/SoundEffects.js";
+import SoundEffects from "../common/sound-effects.js";
 
 let c, s;
 

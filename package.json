@@ -15,16 +15,20 @@
     "clean": "rimraf dist",
     "copyfonts": "copyfiles -f node_modules/font-awesome/fonts/* dist/fonts",
     "copyfavicon": "ncp favicon.ico dist/favicon.ico",
+    "copyscript": "ncp scripts dist/scripts",
     "usemin": "usemin index.html -d dist --htmlmin -o dist/index.html && usemin editor-leitura-tabela.html -d dist --htmlmin -o dist/editor-leitura-tabela.html && usemin links-uteis.html -d dist --htmlmin -o dist/links-uteis.html",
-    "build": "npm run clean && npm run copyfonts  && npm run copyfavicon && npm run transpilejs && npm run usemin"
+    "build": "npm run clean && npm run copyfonts  && npm run copyfavicon && npm run copyscript && npm run usemin"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "babel-cli": "^6.26.0",
+
     "babel-core": "^6.26.3",
+    "babel-loader": "^8.1.0",
     "babel-preset-env": "^1.7.0",
-    "babel-preset-es2015": "^6.24.1",
+    "webpack": "^4.43.0",
+    "webpack-dev-server": "^3.11.0",
+
     "cssmin": "^0.4.3",
     "htmlmin": "0.0.7",
     "node-sass": "^4.14.1",
@@ -33,16 +37,15 @@
     "rimraf": "^3.0.2",
     "uglifyjs": "2.4.11",
     "usemin-cli": "^0.6.0",
-    "webpack": "^4.43.0",
-    "webpack-cli": "^3.3.11"
+
+    "webpack-cli": "^3.3.11",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-cli": "^6.26.0"
   },
   "dependencies": {
-    "bootstrap": "^4.4.1",
     "copyfiles": "^2.2.0",
     "font-awesome": "^4.7.0",
-    "jquery": "^3.5.1",
     "ncp": "^2.0.0",
-    "onchange": "^7.0.2",
-    "popper.js": "^1.16.1"
+    "onchange": "^7.0.2"
   }
 }

@@ -1,7 +1,7 @@
-import CodeEditor from './components/CodeEditor.js';
-import ImportModal from './components/ImportModal.js';
-import DataNavigator from './components/DataNavigator.js';
-import SoundEffects from './common/SoundEffects.js';
+import CodeEditor from './components/code-editor.js';
+import ImportModal from './components/import-modal.js';
+import DataNavigator from './components/data-navigator.js';
+import SoundEffects from './common/sound-effects.js';
 
 
 window.onload = () => {

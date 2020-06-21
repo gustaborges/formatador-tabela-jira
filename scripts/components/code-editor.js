@@ -1,7 +1,7 @@
-import ImportModal from "./ImportModal.js";
-import { MarkdownHelper } from "../common/CodeHelpers.js";
+import ImportModal from "./import-modal.js";
+import { MarkdownHelper } from "../common/code-helpers.js";
 import { TestResultColumnsEnum, tableDataSet } from "../common/common.js";
-import SoundEffects from "../common/SoundEffects.js";
+import SoundEffects from "../common/sound-effects.js";
 
 let c;
 
