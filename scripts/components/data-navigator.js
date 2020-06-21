@@ -52,7 +52,7 @@ const DataNavigator = {
     */
     bindUIActions(){
         c.resetButton.click(() => {
-            SoundEffects.playPoppingSound();
+            SoundEffects.playSwipingSound();
 
             c.headRow.html(HtmlHelper.newTableHeader(['Nenhum dado']));
             c.row.html(HtmlHelper.newTableRow(['Importe dados de uma tabela markdown']));
